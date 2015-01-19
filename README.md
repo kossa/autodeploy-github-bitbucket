@@ -14,7 +14,10 @@ A simple PHP script to auto deploy from github and bitbucket, and executing a co
   * * **Bitbucket** *: goto https://bitbucket.org/user/repo/admin/hooks, select "POST" option in the select box, click on "Add hook", parte your URL to deploy.php file and click on "save"  
 ![alt text](http://i.imgur.com/ePCZBkp.png )  
 
-0. That's all, when you commit and you push automatically **Github** or **Bitbucket** send a post request to `http://www.yourwebsite.com/deploy.php`, and this will execute a `git pull`
+0. That's all, for the first time you should check the `git pull` works or not using `sudo -u www-data git pull`. if you get some errors like `error: cannot open .git/FETCH_HEAD: Permission denied` you should check the chmod of your ".git" folder. also for the first time you should add Github or Bitbucket to "know hosts" file in ".ssh" folder like this :
+![alt text](http://i.imgur.com/RHLLHbe.png )  
+
+When you commit and you push automatically to **Github** or **Bitbucket**, it send a post request to `http://www.yourwebsite.com/deploy.php`, and this will execute a `git pull`
 
 
 ###How to execute a command after the  `git pull` ?
