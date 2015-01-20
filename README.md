@@ -22,7 +22,7 @@ A simple PHP script to auto deploy from **Github** and **Bitbucket**, and execut
 When you commit and you push automatically to **Github** or **Bitbucket**, it sends a post request to `http://www.yourwebsite.com/deploy.php`, and this will execute a `git pull`
 
 ###For Laravel users
-To avoid an route exception you need to disable Laravel routing for deploy route :
+To avoid route exception you need to disable Laravel routing for deploy route :
 
 0. open public/.htaccess
 
