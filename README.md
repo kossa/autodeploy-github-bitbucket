@@ -21,11 +21,21 @@ A simple PHP script to auto deploy from **Github** and **Bitbucket**, and execut
 
 When you commit and you push automatically to **Github** or **Bitbucket**, it sends a post request to `http://www.yourwebsite.com/deploy.php`, and this will execute a `git pull`
 
+###For Laravel users
+To avoid route exception you need to disable Laravel routing for the webhook route/url :
+
+0. open public/.htaccess
+
+
+1. add before the redirect trailing slashes rule
+```
+#Exclude directory deploy from rewriting eg "http://your_url/deploy/index.php"
+RewriteRule ^(deploy) - [L]
+```
+
 
 ###How to execute a command after the  `git pull` ?
 Very simple, in your commit message include the command into a [], for example : `git commit -m "first commit [composer install]"`, when the server (*deploy.php*) detect the [] symbol, it extracts the text between[], and execute the command, ex : `composer install`.
-
-
 
 
 ###More things: 
