@@ -26,13 +26,13 @@ When you commit and you push automatically to **Github** or **Bitbucket**, it'll
 
 
 ###How to execute a command after the  `git pull` ?
-Very simple, in your commit message include the command into a _"[]"_. For example : `git commit -m "first commit [composer install]"`, when the server (*deploy.php*) detects the _"[]"_ symbol, it extracts the text between them, and executes the included command, ex : `composer install`.
+Very simple, in your commit message include the command into a "[ ]". For example : `git commit -m "first commit [composer install]"`, when the server (*deploy.php*) detects the "[ ]" symbol, it extracts the text between them, and executes the included command, ex : `composer install`.
 
 
 
 
 ###More things: 
-- You can change the _"[]"_ with an other symbol, to do so, goto line 15 and change the _'['_ and _']'_ with the symbol you want to use, for example if you want to use _"{}"_ instead of the default one, the pattern will be `$pattern = '/\{(.*?)\}/';`.
+- You can change the "[ ]" with an other symbol, to do so, goto line 15 and change the '[' and ']' with the symbol you want to use, for example if you want to use "{ }" instead of the default one, the pattern will be `$pattern = '/\{(.*?)\}/';`.
 - You can secure your POST request using a key in the hook. For example add a key like `http://www.yourwebsite.com/deploy.php?key=123456` and the *deploy.php* file will check for the `key` variable. But sure, you can imagine other methods.
 - This solution is inspired from [@jondavidjohn](https://twitter.com/jondavidjohn) in his article  [Git pull from a php script, not so simple.](http://jondavidjohn.com/git-pull-from-a-php-script-not-so-simple)
 - If you have any problem, or contribution to this project, not hesitate [here](https://github.com/kossa/autodeploy-github-bitbucket/issues) ;)
