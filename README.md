@@ -23,7 +23,9 @@ When you commit and you push automatically to **Github** or **Bitbucket**, it se
 
 ###For Laravel users
 To avoid an route exception you need to disable Laravel routing for deploy route :
+
 0. open public/.htaccess
+
 
 1. add before the redirect trailing slashes rule
 ```
