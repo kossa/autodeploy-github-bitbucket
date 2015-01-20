@@ -33,8 +33,8 @@ To avoid route exception you need to disable Laravel routing for the webhook rou
 
 1. add before the redirect trailing slashes rule
 ```
-#Exclude directory deploy from rewriting eg "http://your_url/deploy/index.php"
-RewriteRule ^(deploy) - [L]
+#Exclude directory deploy from rewriting eg "http://your_url/deploy.php"
+RewriteRule ^(deploy.php) - [L]
 ```
 
 ###How to execute a command after the  `git pull` ?
