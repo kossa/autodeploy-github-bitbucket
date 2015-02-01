@@ -7,13 +7,6 @@ A simple PHP script to auto-deploy from Github and Bitbucket, and executing a co
 0. Create a new repo on **Github** or **Bitbucket**, and push all your of code.
 0. Add your server's SSH key to **Github** or **Bitbucket**.  
 
----
-Note: _I had a problem with this when I added the default SSH key, so if you have the same problem, you have to generate a SSH key for www-data using : `sudo -u www-data ssh-keygen -t rsa` and then add it to your account._  
-_For github, goto : https://github.com/user/repo/settings/keys, click on "Add deploy key"._  
-_For Bitbucket, goto : https://bitbucket.org/user/repo/admin/deploy-keys, click on "Add key" button._
-
----
-
 0. In your server, clone the repo from **Github** or **Bitbucket**, for example : `git clone git@github.com:user/repo.git`
 0. Change the repository's owner on your server using : `chown -R your_user:www-data repo`. Note that you may have to `sudo` that command ;)
 0. You may, also, have to check the permissions for subdirectories and files: _files => 644, folders => 755_.
@@ -28,6 +21,14 @@ You will also, if you're doing this for the first time, be prompted add Github o
 ![alt text](http://i.imgur.com/RHLLHbe.png )  
 
 When you commit and you push automatically to **Github** or **Bitbucket**, it'll send a post request to `http://www.yourwebsite.com/deploy.php`, and this will execute a `git pull`
+
+
+---
+Note: _In **Step 4** I had a problem with SSH key when I added the default SSH key, so if you have the same problem, you have to generate a SSH key for www-data using : `sudo -u www-data ssh-keygen -t rsa` and then add it to your account._  
+_For github, goto : https://github.com/user/repo/settings/keys, click on "Add deploy key"._  
+_For Bitbucket, goto : https://bitbucket.org/user/repo/admin/deploy-keys, click on "Add key" button._
+
+---
 
 
 ###For Laravel users
