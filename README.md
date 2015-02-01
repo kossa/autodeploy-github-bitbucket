@@ -24,7 +24,7 @@ When you commit and you push automatically to **Github** or **Bitbucket**, it'll
 
 
 ---
-Note: _In **Step 4** I had a problem with SSH key when I added the default SSH key, so if you have the same problem, you have to generate a SSH key for www-data using : `sudo -u www-data ssh-keygen -t rsa` and then add it to your account._  
+Note: _In **Step 3** I had a problem with SSH key when I added the default SSH key, so if you have the same problem, you have to generate a SSH key for www-data using : `sudo -u www-data ssh-keygen -t rsa` and then add it to your account._  
 _For github, goto : https://github.com/user/repo/settings/keys, click on "Add deploy key"._  
 _For Bitbucket, goto : https://bitbucket.org/user/repo/admin/deploy-keys, click on "Add key" button._
 
